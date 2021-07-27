@@ -1,0 +1,48 @@
+
+
+<div class="container align-items-center">
+<div class="form-group align-items-center">  
+    <form>
+<br/>
+    <div class="mb-3 col-md-4">
+        <label for="name" class="form-label" >Product Name</label>
+        <input type="text" class="form-control" name="productName"  [(ngModel)]="product.productName" required placeholder="Enter Product name"/>
+    </div>
+
+    <div class="mb-3 col-md-4">
+        <label for="name" class="form-label" >Department</label>
+        <input type="text" class="form-control" name="department" [(ngModel)]="product.department" required placeholder="Enter Product Department"/>
+    </div>
+
+    <div class="mb-3 col-md-4">
+        <label for="price" class="form-label" >Price</label>
+        <input type="number" class="form-control" name="price"  [(ngModel)]="product.price" placeholder="Enter  Price"/>
+    </div>
+
+    <div class="mb-3 col-md-4">
+        <label for="discount price" class="form-label" >Discount Price</label>
+        <input type="number" class="form-control" name="discountPrice" [(ngModel)]="product.discountPrice" placeholder="Enter  Dsicount Price"/>
+    </div>
+
+    <div class="mb-3 col-md-4">
+        <label for="image" class="form-label" >Image</label>
+        <input type="stirng" class="form-control" name="image" [(ngModel)]="product.image" placeholder="product image"/>
+    </div>
+
+    <div class="mb-3 col-md-4 ">
+        <label for="description" class="form-label" >Description</label>
+        <input type="stirng" class="form-control" name="description" [(ngModel)]="product.description" placeholder="Description"/>
+    </div>
+
+    <div class="mb-3 col-md-4">
+        
+        <input type="button" value="Update prodcut" class="btn btn-secondary"  (click)="updateProduct()" class="btn btn-success" /> ||
+
+        <input type="button" value="Go Back" class="btn btn-secondary" routerLink="/admin/manage-products" class="btn btn-danger"/>
+
+       
+    </div>
+</form>
+</div>
+
+</div>
