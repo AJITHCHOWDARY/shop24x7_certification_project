@@ -1,0 +1,48 @@
+<p>admin-user-update works!</p>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2> User Details</h2>
+        </div>
+
+        <div class="card-body">
+            <form >
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="firstName" placeholder="First Name" [(ngModel)]="user.firstName" required>
+                </div>
+        
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="lastName" placeholder="Last Name" [(ngModel)]="user.lastName" required>
+                </div>
+        
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="Email" [(ngModel)]="user.username" required>
+                </div>
+        
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="phone" placeholder="Phone" [(ngModel)]="user.phone" required>
+                </div>
+                
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="makeAdmin" [(ngModel)]="user.admin" value=true>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Make user an admin</label>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <button type="button" class="btn btn-secondary" (click)="updateUser()">Update</button> &nbsp;
+                    <!-- <input type="submit" value="Update" class="btn btn-secondary"/> &nbsp; -->
+                    <button type="button" routerLink="/admin/users" class="btn btn-secondary">Back</button>
+                </div>
+                
+               
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+</div>

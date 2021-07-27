@@ -1,0 +1,38 @@
+<p>admin-add-user works!</p>
+<div class="container">
+    <h2>Add New User</h2>
+            <form (ngSubmit)="addUser()">
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="firstName" placeholder="First Name" [(ngModel)]="user.firstName" required>
+                </div>
+        
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="lastName" placeholder="Last Name" [(ngModel)]="user.lastName" required>
+                </div>
+        
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="Email" [(ngModel)]="user.username" required>
+                </div>
+        
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="user.password" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="phone" placeholder="Phone" [(ngModel)]="user.phone" required>
+                </div>
+                
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="makeAdmin" [(ngModel)]="user.admin" value=true>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Make user an admin</label>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <!-- <button type="button" class="btn btn-secondary" (click)="addUser()">Register</button> &nbsp; -->
+                    <input type="submit" value="Register" class="btn btn-secondary"/> &nbsp;
+                    <input type="reset" value="Clear" class="btn btn-secondary"/>
+                </div>
+                
+               
+            </form>
+</div>
