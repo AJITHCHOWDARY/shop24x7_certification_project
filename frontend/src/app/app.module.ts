@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { UserService } from './services/user.service';
 import { AdminAddUserComponent } from './admin-add-user/admin-add-user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminUserUpdateComponent } from './admin-user-update/admin-user-update.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CarouselComponent } from './carousel/carousel.component';
@@ -42,7 +42,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]

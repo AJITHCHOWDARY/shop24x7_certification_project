@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MustMatch } from '../directives/must-match.validator';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
 
@@ -11,9 +13,10 @@ import { UserService } from '../services/user.service';
 export class AdminUserUpdateComponent implements OnInit {
 
   id: any;
-  user: User = new User();
+  editUser: User = new User();
+  editUserForm: FormGroup;
 
-  constructor(private _route:ActivatedRoute, private _userService: UserService,
+  constructor(private _formBuilder:FormBuilder, private _route:ActivatedRoute, private _userService: UserService,
     private _router:Router) { }
 
   ngOnInit(): void {
@@ -22,15 +25,29 @@ export class AdminUserUpdateComponent implements OnInit {
     console.log("ID: " + this.id);
 
     this._userService.getUserById(this.id).subscribe(result=>{
-      this.user = result;
-      console.log(this.user);
+      this.editUser = result;
+      console.log(this.editUser);
     }, error=>{
       console.log(error);
     })
+
+    this.editUserForm = this._formBuilder.group({
+      firstName:['', [Validators.required, Validators.minLength(3)]],
+      lastName:['', [Validators.required]],
+      username: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.minLength(10)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required]],
+      makeAdmin:['']
+    }, {validator:MustMatch('password', 'confirmPassword')});
+  }
+  
+  get f(){
+    return this.editUserForm.controls;
   }
 
   updateUser(){
-    this._userService.updateUser(this.id, this.user).subscribe(result=>{
+    this._userService.updateUser(this.id, this.editUser).subscribe(result=>{
       console.log(result)
       this._router.navigate(['/admin/users']);
     }, error=>{
