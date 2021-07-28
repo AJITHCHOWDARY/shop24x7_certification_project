@@ -20,6 +20,10 @@ var productSchema = mongoose.Schema({
     },
     description:{
         type: String
+    },
+    topSelling:{
+        type: Boolean,
+        default:false
     }
 })
 

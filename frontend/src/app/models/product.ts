@@ -5,7 +5,7 @@ export class Product{
     discountPrice:Number;
     image:String;
     description:String;
-    //topSelling: Boolean
+    topSelling: Boolean
    
 }
 

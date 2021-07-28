@@ -3,9 +3,9 @@ const express= require('express');
 
 
 module.exports.saveProduct=(req,res)=>{
-    //var product= new Product(req.body);
-    //console.log(product);
-    Product.create(req.body, (err)=>{
+    var product= new Product(req.body);
+    console.log(product);
+    Product.create(product, (err)=>{
         if(err) throw err;
         {
             var result={
