@@ -5,6 +5,9 @@ import { AdminAddUserComponent } from './admin-add-user/admin-add-user.component
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminUserUpdateComponent } from './admin-user-update/admin-user-update.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { CategoryListingComponent } from './category-listing/category-listing.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AdminComponent } from './admin/admin.component';
 import { ManageProductsComponent } from './manage-products/manage-products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -16,6 +19,9 @@ const routes: Routes = [
   {path:'admin/users', component:AdminUsersComponent},
   {path:'admin/addUser', component: AdminAddUserComponent},
   {path: 'admin/users/update/:id', component:AdminUserUpdateComponent},
+  {path: 'homepage', component: HomepageComponent},
+  {path:'category-listing', component: CategoryListingComponent},
+  {path:'product-detail', component: ProductDetailComponent},
   {path:'admin-login', component:AdminLoginComponent},
   {path:'admin', component:AdminComponent,canActivate:[AuthGuard]},
   {path:'admin/add-new-product', component:AddNewProductComponent},
