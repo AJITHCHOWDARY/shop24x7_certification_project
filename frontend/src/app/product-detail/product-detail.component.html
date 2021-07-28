@@ -1,11 +1,11 @@
 <div class="container">
-    <h2>Product Name</h2>
+    <h2>{{ product.productName }}</h2>
     <div class="row mb-3">
         <div class="col">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="https://cdn.mos.cms.futurecdn.net/RT7jeVnZzEcY3KYjsessr7-970-80.jpg.webp" class="d-block w-100 rounded-3" alt="...">
+                    <img src="{{ product.image }}" class="d-block w-100 rounded-3" style="height: 500px; object-fit: cover;" alt="...">
                   </div>
                 </div>
               </div>
@@ -13,28 +13,22 @@
     </div>
     <div class="row mb-5">
         <div class="col-4">
-                <h3 class="d-inline">€100.00</h3>&nbsp;
-                <h3 class="text-decoration-line-through d-inline" style="color: red;">€199.99</h3>
+                <h3 class="d-inline">{{ product.discountPrice | currency:'EUR' }}</h3>&nbsp;
+                <h3 class="text-decoration-line-through d-inline" style="color: red;">{{ product.price | currency:'EUR' }}</h3>
                 <div>
                     <button class="btn btn-warning me-3">Buy Now</button>
                     <button class="btn btn-primary">Add to Cart</button>
                 </div>   
         </div>
         <div class="col-8">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed accumsan nisi. 
-                Proin ut feugiat massa, ac dignissim tellus. Curabitur cursus arcu ligula, vitae facilisis 
-                ligula egestas ac. Phasellus accumsan ipsum at enim rhoncus fermentum. Aliquam ut scelerisque augue. 
-                Etiam ante diam, feugiat at tortor ut, venenatis vehicula nisi. Aliquam vulputate, odio in mollis fermentum, 
-                ipsum risus venenatis ligula, sit amet finibus magna est vitae lectus. Morbi ac enim nunc. Duis ut fermentum sem. 
-                Donec non iaculis ex. Donec a molestie est. Morbi tristique, diam nec facilisis fermentum, purus quam consectetur est, 
-                id vestibulum dolor neque vitae augue. Morbi auctor odio sit amet auctor congue. Ut sit amet leo eu justo euismod porttitor.</p>
+            <p>{{ product.description }}</p>
         </div>
     </div>
     <h2>Recommended Products</h2>
     <div class="row row-cols-3">
-        <div class="col mb-3" *ngFor="let product of productList">
+        <div class="col mb-3" *ngFor="let product of productList.slice(0, 6)">
             <div class="card shadow-sm">
-                <img src="{{ product }}" alt="..." width="100%" height="225" style="object-fit: cover;">
+                <a [routerLink]="['/product-detail', product._id]" onClick="refresh()"><img src="{{ product.image }}" alt="{{ product.productName }}" width="100%" height="225" style="object-fit: cover;"></a>
             </div>
         </div>
     </div>

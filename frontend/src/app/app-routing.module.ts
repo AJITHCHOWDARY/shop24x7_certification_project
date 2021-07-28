@@ -20,8 +20,8 @@ const routes: Routes = [
   {path:'admin/addUser', component: AdminAddUserComponent},
   {path: 'admin/users/update/:id', component:AdminUserUpdateComponent},
   {path: 'homepage', component: HomepageComponent},
-  {path:'category-listing', component: CategoryListingComponent},
-  {path:'product-detail', component: ProductDetailComponent},
+  {path:'category-listing/:department', component: CategoryListingComponent},
+  {path:'product-detail/:id', component: ProductDetailComponent},
   {path:'admin-login', component:AdminLoginComponent},
   {path:'admin', component:AdminComponent,canActivate:[AuthGuard]},
   {path:'admin/add-new-product', component:AddNewProductComponent},
@@ -32,7 +32,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation:'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

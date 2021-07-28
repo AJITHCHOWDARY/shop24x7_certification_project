@@ -13,17 +13,19 @@
             </div>
         </div>
         <div class="col">
-            <h2>Category Name</h2>
+            <h2>{{ department.replace('-', ' ') }}</h2>
             <div class="row row-cols-3">
-                <div class="col mb-3" *ngFor="let product of productList">
-                    <div class="card">
-                        <img src="{{ product }}" alt="..." width="100%" height="250px" style="object-fit: cover;">
-                        <div class="card-footer align-text-bottom">
-                            €200
-                            <button class="btn btn-outline-primary btn-sm float-end">Add to Cart</button>
+                <ng-container *ngFor="let product of productList">
+                    <div class="col mb-3" *ngIf="product.department == department" >
+                        <div  class="card">
+                            <img src="{{ product.image }}" alt="..." width="100%" height="250px" style="object-fit: cover;">
+                            <div class="card-footer">
+                                {{ product.discountPrice | currency:'EUR' }}
+                                <button class="btn btn-outline-primary btn-sm float-end">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </ng-container>
             </div>
         </div>
     </div>
