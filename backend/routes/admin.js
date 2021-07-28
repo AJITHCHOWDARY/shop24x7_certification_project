@@ -52,7 +52,7 @@ router.post('/users/register', (req,res)=>{
     passport.authenticate("local")(req,res,function(){
       var result = {
         "status" : "success",
-        "message" : "user created successfully."
+        "message" : "User created successfully."
       }
       return res.send(result);
     })

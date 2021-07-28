@@ -9,6 +9,7 @@ var adminRouter = require('./routes/admin');
 var productsRouter = require('./routes/product');
 
 
+
 var cors = require('cors');
 var mongoose = require('mongoose');
 
@@ -17,7 +18,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local');
 passportLocalMongoose = require('passport-local-mongoose');
 var session = require('express-session');
-var User = require('./models/userModel')
+var User = require('./models/userModel');
 
 var app = express();
 

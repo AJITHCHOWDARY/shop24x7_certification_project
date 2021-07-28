@@ -27,8 +27,9 @@ export class ProductUpdateComponent implements OnInit {
 
   
   updateProduct(){
-    this._httpClient.post('http://localhost:8080/products/update/'+this.id,this.product).subscribe(result=>{
-      alert('Product Updated Successfully');
+    this._httpClient.put('http://localhost:8080/products/update/'+this.id,this.product).subscribe(result=>{
+      //alert('Product Updated Successfully');
+      console.log(result);
       this._router.navigate(['/admin/manage-products']);
 
     }, (error)=>{
