@@ -22,7 +22,7 @@ router.get('/products/:id', productController.getProductById);
 router.delete('/delete/:id', productController.deleteProduct);
 
 //GET request:http://localhost:3000/products/update/60fee7b2e9a56238c468c4cb
-router.post('/update/:id', productController.updateProduct);
+router.put('/update/:id', productController.updateProduct);
 
 //POST request : http://localhost:3000/products/60fee7b2e9a56238c468c4cb
 router.post('/edit/:id', productController.editProduct);

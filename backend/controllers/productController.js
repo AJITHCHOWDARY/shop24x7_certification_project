@@ -7,7 +7,12 @@ module.exports.saveProduct=(req,res)=>{
     //console.log(product);
     Product.create(req.body, (err)=>{
         if(err) throw err;
-        res.send('Product added successfully');
+        {
+            var result={
+                "message":"product added successfully"
+            }
+            return res.send(result);
+        }
     })
 
 }
@@ -36,15 +41,20 @@ module.exports.deleteProduct = (req,res)=>{
         if(!product) return res.status(404).send('Product Doesnt exist with this id.');
         Product.findByIdAndRemove(req.params.id,(err)=>{
             if(err) throw err;
-            res.send("Product deleted");
+            var result={
+                "message":"product deleted successfully"
+            }
+            return res.send(result);
         })
     })
 }
 
 module.exports.updateProduct = (req,res)=>{
-    Product.findById(req.params.id,(err,product)=>{
+    var product = new Product(req.body);
+    console.log(product);
+    Product.findByIdAndUpdate(req.params.id,product,(err,product)=>{
         if(err) throw err;
-        if(!product) return res.status(404).send('Product Doesnt exist with this Id');
+        //if(!product) return res.status(404).send('Product Doesnt exist with this Id');
         res.send(product);
     })
 }

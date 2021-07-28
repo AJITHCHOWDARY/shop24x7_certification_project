@@ -15,7 +15,7 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
 import { AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
-  {path:'', redirectTo:'admin-users', pathMatch:'full'},
+  {path:'', redirectTo:'homepage', pathMatch:'full'},
   {path:'admin/users', component:AdminUsersComponent},
   {path:'admin/addUser', component: AdminAddUserComponent},
   {path: 'admin/users/update/:id', component:AdminUserUpdateComponent},
@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'category-listing', component: CategoryListingComponent},
   {path:'product-detail', component: ProductDetailComponent},
   {path:'admin-login', component:AdminLoginComponent},
-  {path:'admin', component:AdminComponent,canActivate:[AuthGuard]},
+  {path:'admin', component:AdminComponent},
   {path:'admin/add-new-product', component:AddNewProductComponent},
   { path:'admin/manage-products', component:ManageProductsComponent},
   {path:'admin/manage-products/:id', component:ProductDetailsComponent},
