@@ -1,0 +1,50 @@
+
+
+<div class="card">
+    <div class="card-header">
+            Details of {{product.productName}}
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                
+                <tr>
+                    <th>Product ID</th>
+                    <td>{{id}}</td>
+                </tr>
+            <tr>
+                <th>Product Name</th>
+                <td>{{product.productName}}</td>
+            </tr>
+
+            <tr>
+                <th>Product price</th>
+                <td>{{product.price}}</td>
+            </tr>
+
+            <tr>
+                <th>Product Discounted Price</th>
+                <td>{{product.discountPrice}}</td>
+            </tr>
+
+            <tr>
+                <th>Product Department</th>
+                <td>{{product.department}}</td>
+            </tr>
+
+            <tr>
+                <th>Product Description</th>
+                <td>{{product.description}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer">
+        <a class="btn btn-warning" routerLink="/admin/manage-products">Go Back</a>
+        <a [routerLink]="['/admin/manage-products/edit/',id]" class="btn btn-primary">Update Product</a>
+       
+        <a class="btn btn-danger" (click)="deleteProduct()" >Delete</a>
+    </div>
+
+</div>
