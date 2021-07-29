@@ -31,6 +31,7 @@ export class CartService {
     this.items = [];
     sessionStorage.removeItem('cart')
     return this.items;
+    
   }
 
   getTotal() {

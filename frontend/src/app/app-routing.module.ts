@@ -30,7 +30,7 @@ const routes: Routes = [
   {path:'admin/addUser', component: AdminAddUserComponent},
   {path: 'admin/users/update/:id', component:AdminUserUpdateComponent},
   {path: 'homepage', component: HomepageComponent},
-  {path:'category-listing/:department', component: CategoryListingComponent},
+  {path:'category-listing', component: CategoryListingComponent},
   {path:'products', component:ProductsComponent},
   {path:'category-listing/:department', component: CategoryListingComponent},
   {path:'product-detail/:id', component: ProductDetailComponent},

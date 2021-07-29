@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../models/product';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
   // GET 6 products from the database
   productList: Product[]
 
-  constructor(private _httpClient:HttpClient, private _router:Router, private _route:ActivatedRoute) { 
+  constructor(private _httpClient:HttpClient, private _router:Router, private _route:ActivatedRoute, private _cartService:CartService) { 
     this._router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
@@ -43,6 +44,12 @@ export class ProductDetailComponent implements OnInit {
     }, error => {
       console.log(error);
     })
+  }
+
+  addToCart(product : Product){
+    this._cartService.addToCart(product);
+    console.log(product)
+    alert('Product added!');
   }
 
 }
