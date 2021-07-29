@@ -1,3 +1,5 @@
+
+<!--
 <header class="p-3 bg-dark text-white mb-3">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -32,6 +34,70 @@
       </div>
     </div>
   </header>
+-->
+
+<!--IF Admin Header-->
+<div *ngIf="isAdmin" > 
+  
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        
+          <li><a routerLink="/homepage" class="nav-link px-2 text-secondary">Home</a></li>
+         
+          <li><a href="/admin/manage-products" class="nav-link px-2 text-secondary">Manage Products</a></li>
+          <li><a href="/admin/users" class="nav-link px-2 text-secondary">Manage Users</a></li>
+         
+          <li><a href="#" class="nav-link px-2 text-secondary">Orders</a></li>
+        </ul>
+    
+        <div class="text-end">
+         
+          <button type="button" routerLink="/userlogin" class="btn btn-outline-light me-2">Login</button>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+</div>
+ 
+
+
+<div *ngIf="!isAdmin">
+<!--IF USer is Normal User Header to be displayed-->
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+
+     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/homepage" class="nav-link px-2 text-secondary">Home</a></li>
+        <li><a routerLink="/category-listing" class="nav-link px-2 text-secondary">Categories</a></li> 
+        <li><a routerLink="/products" class="nav-link px-2 text-secondary">Products</a></li> 
+        <li><a routerLink="/userprofile" class="nav-link px-2 text-secondary">Profile</a></li>
+       
+      </ul>
+      <div class="text-end">
+         <button type="button" routerLink="/register" class="btn btn-outline-success">Register</button>
+        <button type="button" routerLink="/userlogin" class="btn btn-outline-light me-2">Login</button>
+        
+      </div>
+      
+    </div>
+  </div>
+</header>
+</div>
+
+
+
 
 
 

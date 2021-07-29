@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { UsereditprofileComponent } from './usereditprofile/usereditprofile.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'homepage', pathMatch:'full'},
@@ -29,6 +30,10 @@ const routes: Routes = [
   {path: 'admin/users/update/:id', component:AdminUserUpdateComponent},
   {path: 'homepage', component: HomepageComponent},
   {path:'category-listing/:department', component: CategoryListingComponent},
+  //{path:'category-listing', component:CategoryListingComponent},
+  {path:'products', component:ProductsComponent},
+  {path:'category-listing/:department', component: CategoryListingComponent},
+  //{path:'product-detail', component:ProductDetailComponent},
   {path:'product-detail/:id', component: ProductDetailComponent},
   {path:'admin-login', component:AdminLoginComponent},
   {path:'admin', component:AdminComponent},

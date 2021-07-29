@@ -25,6 +25,7 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { UsereditprofileComponent } from './usereditprofile/usereditprofile.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     UserloginComponent,
     UserprofileComponent,
     UsereditprofileComponent,
-    FilterPipe
+    FilterPipe,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
