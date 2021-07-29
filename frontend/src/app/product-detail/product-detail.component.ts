@@ -28,14 +28,18 @@ export class ProductDetailComponent implements OnInit {
 
     this._httpClient.get<Product>('http://localhost:8080/products/products/'+this.id).subscribe(result => {
       this.product=result;
-      console.log(result);
     }, error => {
       console.log(error);
     })
 
     this._httpClient.get<Product[]>('http://localhost:8080/products/products').subscribe(result => {
       this.productList = result;
-      console.log(this.productList);
+      this.productList.sort(value => { return value.department == this.product.department ? -1 : 1 });
+      for(let product of this.productList){
+        if(product.productName == this.product.productName){
+          this.productList = this.productList.filter(value => value != product);
+        }
+      }
     }, error => {
       console.log(error);
     })

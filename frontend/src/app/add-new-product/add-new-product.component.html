@@ -58,7 +58,7 @@
 
     <div class="mb-3 col-md-4">
         <label for="price" class="form-label" >Price</label>
-        <input type="text" class="form-control" name="price" [(ngModel)]="product.price" placeholder="Enter  Price"
+        <input type="text" class="form-control" name="price" [(ngModel)]="product.price" placeholder="Enter Price"
         #price="ngModel" [ngClass]="{'is-invalid':price.touched && price.invalid}" minlength="1" maxlength="6" required/>
         <div *ngIf="price.touched && price.invalid" class="invalid-feedback">
             <div *ngIf="price.errors.required">
@@ -77,7 +77,7 @@
 
     <div class="mb-3 col-md-4">
         <label for="discount price" class="form-label" >Discount Price</label>
-        <input type="text" class="form-control" name="discountPrice" [(ngModel)]="product.discountPrice" placeholder="Enter  Dsicount Price"
+        <input type="text" class="form-control" name="discountPrice" [(ngModel)]="product.discountPrice" placeholder="Enter Discounted Price"
         #discountPrice="ngModel" [ngClass]="{'is-invalid':discountPrice.touched && discountPrice.invalid}" minlength="1" maxlength="6" required/>
         <div *ngIf="discountPrice.touched && discountPrice.invalid" class="invalid-feedback">
             <div *ngIf="discountPrice.errors.required">
@@ -95,7 +95,7 @@
 
     <div class="mb-3 col-md-4">
         <label for="image" class="form-label" >Image</label>
-        <input type="text" class="form-control" name="image" [(ngModel)]="product.image" placeholder="product image" 
+        <input type="text" class="form-control" name="image" [(ngModel)]="product.image" placeholder="Enter URL for Product Image" 
         #image="ngModel" [ngClass]="{'is-invalid':image.touched && image.invalid}" required  />
 
         <div *ngIf="image.touched && image.invalid" class="invalid-feedback">
@@ -107,7 +107,7 @@
 
     <div class="mb-3 col-md-4 ">
         <label for="description" class="form-label" >Description</label>
-        <input type="text" class="form-control" name="description" [(ngModel)]="product.description" placeholder="Description"
+        <input type="text" class="form-control" name="description" [(ngModel)]="product.description" placeholder="Enter Product Description"
         #description="ngModel" [ngClass]="{'is-invalid':description.touched && description.invalid}" minlength="60" required/>
         <div *ngIf="description.touched && description.invalid" class="invalid-feedback">
             <div *ngIf="description.errors.required">
