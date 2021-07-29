@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit {
     this._userService.addUser(this.newUser).subscribe(result =>{
       console.log(result)
       alert(result['message'])
+      console.log(this.newUser.username);
       window.location.replace('/userlogin')
     }, error=>{
       console.log(error);
