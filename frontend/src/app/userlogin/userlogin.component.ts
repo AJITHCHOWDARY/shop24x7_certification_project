@@ -41,16 +41,20 @@ export class UserloginComponent implements OnInit {
 
             console.log(localStorage.getItem('id'))
             console.log(localStorage.getItem('admin'))
-var stat=localStorage.getItem('admin');
+            var stat=localStorage.getItem('admin');
             localStorage.setItem('isLoggedIn','true')
 
             this.success=true
 
             if(stat == 'true'){
-              this._router.navigate(['/admin']);
+              window.location.replace('/admin');
+              //this._router.navigate(['/admin']);
             }
             else
-  {this._router.navigate(['/homepage'])}
+          { 
+            window.location.replace('/homepage')
+          }
+    //this._router.navigate(['/homepage'])}
           
           }
         }
