@@ -20,6 +20,10 @@ import { ManageProductsComponent } from './manage-products/manage-products.compo
 import { ProductUpdateComponent } from './product-update/product-update.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UsereditprofileComponent } from './usereditprofile/usereditprofile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     ManageProductsComponent,
     ProductUpdateComponent,
     ProductDetailsComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    RegisterComponent,
+    UserloginComponent,
+    UserprofileComponent,
+    UsereditprofileComponent
   ],
   imports: [
     BrowserModule,

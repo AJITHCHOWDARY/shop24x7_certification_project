@@ -13,9 +13,17 @@ import { ManageProductsComponent } from './manage-products/manage-products.compo
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { RegisterComponent } from './register/register.component';
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UsereditprofileComponent } from './usereditprofile/usereditprofile.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'homepage', pathMatch:'full'},
+  {path:'register',component:RegisterComponent},
+  {path:'userlogin',component:UserloginComponent},
+  {path:'userprofile',component:UserprofileComponent},
+  {path:'usereditprofile',component:UsereditprofileComponent},
   {path:'admin/users', component:AdminUsersComponent},
   {path:'admin/addUser', component: AdminAddUserComponent},
   {path: 'admin/users/update/:id', component:AdminUserUpdateComponent},

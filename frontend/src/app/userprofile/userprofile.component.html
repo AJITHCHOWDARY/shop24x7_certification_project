@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header">
+            Details of {{user.firstName}}
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                
+                <tr>
+                    <th>User ID</th>
+                    <td>{{id}}</td>
+                </tr>
+            <tr>
+                <th>First Name</th>
+                <td>{{user.firstName}}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>{{user.lastName}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{user.username}}</td>
+            </tr>
+            <tr>
+                <th>Phone Number</th>
+                <td>{{user.phone}}</td>
+            </tr>
+            
+
+            
+        </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer">
+        <a class="btn btn-warning" routerLink="/homepage">Go Back</a>
+        <a [routerLink]="['/usereditprofile']" class="btn btn-primary">Update User</a>
+       
+        <!--<a class="btn btn-danger" (click)="deleteProduct()" >Delete</a>-->
+    </div>
+
+</div>
