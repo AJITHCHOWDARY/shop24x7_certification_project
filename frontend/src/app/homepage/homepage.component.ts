@@ -27,8 +27,6 @@ export class HomepageComponent implements OnInit {
     }, error => {
       console.log(error);
     })
-
-    
   }
 
 }

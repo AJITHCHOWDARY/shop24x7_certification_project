@@ -3,6 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/userModel')
+var nodemailer = require('nodemailer')
 
 var passport = require('passport');
 
@@ -54,9 +55,38 @@ router.post('/users/register', (req,res)=>{
         "status" : "success",
         "message" : "User created successfully."
       }
+     
       return res.send(result);
+
+      sendMail(user, (err, info) => {
+        if (err) {
+          console.log(err);
+          res.status(400);
+          res.send({ error: "Failed to send email" });
+        } else {
+          console.log("Email has been sent");
+          res.send(info);
+        }
+      });
+
     })
   })
+
+  // Ajith's Nodemailer
+  const mailOptions = {
+    from: `"Ajith", "ajithumass2019@gmail.com"`,
+    to: user.username,
+      subject: "Shop 25x7 Account Registartion ",
+    html: "<h4>Hello " + user.firstName + user.lastName+ ",</h4><p>Thanks for creating the 24x7 account, Happy Shopping . If you are not the recipient of this, please contact help@shop24x7.com </p>"
+  };
+  
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(error);
+    }
+  
+    console.log('Message sent: ' + info.response);
+  });
 
 })
 
@@ -77,5 +107,14 @@ router.delete('/users/delete/:id', (req, res)=>{
   })
 })
 
+
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'ajithumass2019@gmail.com',
+    pass: '*********' //Enter Gmail Password
+  }
+});
 
 module.exports = router;

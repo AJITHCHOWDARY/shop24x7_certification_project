@@ -1,60 +1,4 @@
-<!--<p>userlogin works!</p>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-   CSS only 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
- JavaScript Bundle with Popper 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-crossorigin="anonymous"></script>
-</head>
-
-<body>
-
-  
-
-    <br><br>
-
-    <div class="container">
-      <h2> Welcome to Shop 24*7</h2>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Login</h5>
-        <form (ngSubmit)="login()">
-
-            <div class="mb-3">
-                <input type="text" class="form-control" name="username" placeholder="email" [(ngModel)]="user.username" required>
-            </div>
-    
-            <div class="mb-3">
-                <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="user.password" required>
-            </div>
-           
-            
-            
-            <br />
-            <div class="mb-3">
-                 <button type="button" class="btn btn-secondary" (click)="addUser()">Register</button> &nbsp; 
-                <input type="submit" value="Login" class="btn btn-secondary"/> &nbsp;
-            </div>
-            
-           
-        </form>
-      </div>
-    </div>
-
-
-</body>
-
-</html>-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -161,6 +105,30 @@ body {
 </head>
 
 
+
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+
+     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/homepage" class="nav-link px-2 text-secondary">Home</a></li>
+        <li><a routerLink="/category-listing" class="nav-link px-2 text-secondary">Categories</a></li> 
+        <li><a routerLink="/product-detail" class="nav-link px-2 text-secondary">Product Details</a></li> 
+        <li><a routerLink="/userprofile" class="nav-link px-2 text-secondary">Profile</a></li>
+       
+      </ul>
+    
+       <!--<div class="text-end">   
+       <button type="button" routerLink="/admin-login" class="btn btn-outline-light me-2">Admin Login</button>
+        <button type="button" routerLink="/register" class="btn btn-outline-light">Register</button> | 
+        <button type="button" routerLink="/userlogin" class="btn btn-outline-light">Login</button>
+      </div>-->
+    </div>
+  </div>
+</header>
 
   
 <body>
