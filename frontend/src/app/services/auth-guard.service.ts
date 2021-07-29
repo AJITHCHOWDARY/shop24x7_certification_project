@@ -16,6 +16,7 @@ export class AuthGuard implements CanActivate {
       this._router.navigate(['/admin-login'])
     }
   }
+
   isLoggedIn(): boolean {
     let status = false
     if (localStorage.getItem('isLoggedIn') == 'true') {
@@ -26,8 +27,22 @@ export class AuthGuard implements CanActivate {
     return status
   }
 
+  isAdmin(): boolean{
+    if (localStorage.getItem('admin') == 'true'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
   logout() {
-    localStorage.setItem('isLoggedIn', 'false')
-    this._router.navigate(['/admin-login'])
+    
+    localStorage.setItem('isLoggedIn', 'false');
+    localStorage.removeItem('firstName');
+    localStorage.removeItem('lastName');
+    localStorage.removeItem('id');
+    localStorage.removeItem('admin');
+
+    window.location.replace('/homepage');
   }
 }
