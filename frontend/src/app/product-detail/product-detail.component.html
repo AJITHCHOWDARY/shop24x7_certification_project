@@ -31,6 +31,7 @@
         <div class="col mb-3" *ngFor="let product of productList.slice(0, 6)">
             <div class="card shadow-sm">
                 <a [routerLink]="['/product-detail', product._id]" (click)="refresh"><img src="{{ product.image }}" alt="{{ product.productName }}" width="100%" height="225" style="object-fit: cover;"></a>
+                <h6>{{product.productName}} &emsp; &nbsp; &nbsp; &nbsp; &nbsp;{{product.price | currency:'EUR'}} </h6> 
             </div>
         </div>
     </div>
