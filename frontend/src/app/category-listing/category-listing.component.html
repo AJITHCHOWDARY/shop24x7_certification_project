@@ -45,6 +45,7 @@
                 <ng-container *ngFor="let product of productList | filter:min:max">
                     <div class="col mb-3" *ngIf="product.department == department">
                         <div class="card" *ngIf="!product.topSelling; else elseBlock">
+                            <div class="card-header" style="font-size: small;">{{ product.productName }}</div>
                             <img src="{{ product.image }}" alt="..." width="100%" height="250px" style="object-fit: cover;">
                             <div class="card-footer">
                                 {{ product.discountPrice | currency:'EUR' }}
@@ -53,7 +54,7 @@
                         </div>
                         <ng-template #elseBlock>
                             <div class="card text-dark">
-                                <div class="card-header" style="font-size: small;">Top Selling Product!</div>
+                                <div class="card-header" style="font-size: small;">Top Selling Product! <br>  {{ product.productName }} </div>
                                 <img src="{{ product.image }}" alt="..." width="100%" height="250px" style="object-fit: cover;">
                                 <div class="card-footer">
                                     {{ product.discountPrice | currency:'EUR' }}
