@@ -1,77 +1,4 @@
 
-<!--
-<div class="container align-items-center">
-<div class="form-group align-items-center">  
-    <form >
-<br/>
-    <div class="mb-3 col-md-4">
-        <label for="name" class="form-label" >Product Name</label>
-        <input type="text" class="form-control" name="productName"  [(ngModel)]="product.productName" required placeholder="Enter Product name"/>
-    </div>
-
-    <div class="mb-3 col-md-4">
-        <label for="name" class="form-label" >Department</label>
-        <input type="text" class="form-control" name="department" [(ngModel)]="product.department" required placeholder="Enter Product Department"/>
-    </div>
-
-    <div class="mb-3 col-md-4">
-        <label for="price" class="form-label" >Price</label>
-        <input type="number" class="form-control" name="price"  [(ngModel)]="product.price" placeholder="Enter  Price"/>
-    </div>
-
-    <div class="mb-3 col-md-4">
-        <label for="discount price" class="form-label" >Discount Price</label>
-        <input type="number" class="form-control" name="discountPrice" [(ngModel)]="product.discountPrice" placeholder="Enter  Dsicount Price"/>
-    </div>
-
-    <div class="mb-3 col-md-4">
-        <label for="image" class="form-label" >Image</label>
-        <input type="stirng" class="form-control" name="image" [(ngModel)]="product.image" placeholder="product image"/>
-    </div>
-
-    <div class="mb-3 col-md-4 ">
-        <label for="description" class="form-label" >Description</label>
-        <input type="stirng" class="form-control" name="description" [(ngModel)]="product.description" placeholder="Description"/>
-    </div>
-
-    <div class="mb-3 col-md-4">
-        
-        <input type="button" value="Update prodcut" class="btn btn-secondary"  (click)="updateProduct()" class="btn btn-success" /> ||
-
-        <input type="button" value="Go Back" class="btn btn-secondary" routerLink="/admin/manage-products" class="btn btn-danger"/>
-
-       
-    </div>
-</form>
-</div>
-
-</div>
--->
-<header class="p-3 bg-dark text-white">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-
-       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/admin" class="nav-link px-2 text-secondary">Home</a></li>
-         <!-- <li><a href="/admin/add-new-product" class="nav-link px-2 text-secondary">Add New Product</a></li>
-        -->
-          <li><a href="/admin/manage-products" class="nav-link px-2 text-secondary">Manage Products</a></li>
-          <li><a href="/admin/users" class="nav-link px-2 text-secondary">Manage Users</a></li>
-         
-          <li><a href="#" class="nav-link px-2 text-secondary">Orders</a></li>
-        </ul>    
-
-        <div class="text-end">
-         
-          <button type="button" routerLink="/admin-login" class="btn btn-outline-light me-2">Admin Login</button>
-        </div>
-      </div>
-    </div>
-  </header>
-
 <div class="container align-items-center">
     <div class="form-group align-items-center">  
         <form  name="form" #prodForm="ngForm" (ngSubmit)="prodForm.form.valid && updateProduct() " >
@@ -163,6 +90,11 @@
                     Description Should be Atleast 60 Chars.
                 </div>
             </div>
+        </div>
+
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="makeTopSellingProduct" [(ngModel)]="product.topSelling" value=true>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Top Selling Product</label>
         </div>
         
         <div class="mb-3 col-md-4">

@@ -1,26 +1,3 @@
-<header class="p-3 bg-dark text-white">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-
-     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a routerLink="/homepage" class="nav-link px-2 text-secondary">Home</a></li>
-        <li><a routerLink="/category-listing" class="nav-link px-2 text-secondary">Categories</a></li> 
-        <li><a routerLink="/product-detail" class="nav-link px-2 text-secondary">Product Details</a></li> 
-        <li><a routerLink="/userprofile" class="nav-link px-2 text-secondary">Profile</a></li>
-       
-      </ul>
-    
-       <!--<div class="text-end">   
-       <button type="button" routerLink="/admin-login" class="btn btn-outline-light me-2">Admin Login</button>
-        <button type="button" routerLink="/register" class="btn btn-outline-light">Register</button> | 
-        <button type="button" routerLink="/userlogin" class="btn btn-outline-light">Login</button>
-      </div>-->
-    </div>
-  </div>
-</header>
 
 
 <div class="container">
@@ -54,6 +31,7 @@
         <div class="col mb-3" *ngFor="let product of productList.slice(0, 6)">
             <div class="card shadow-sm">
                 <a [routerLink]="['/product-detail', product._id]" (click)="refresh"><img src="{{ product.image }}" alt="{{ product.productName }}" width="100%" height="225" style="object-fit: cover;"></a>
+                <h6>{{product.productName}} &emsp; &nbsp; &nbsp; &nbsp; &nbsp;{{product.price | currency:'EUR'}} </h6> 
             </div>
         </div>
     </div>

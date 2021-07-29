@@ -1,29 +1,4 @@
 
-<header class="p-3 bg-dark text-white">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-
-       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/admin" class="nav-link px-2 text-secondary">Home</a></li>
-          <!--<li><a href="/admin/add-new-product" class="nav-link px-2 text-secondary">Add New Product</a></li>
-          -->
-          <li><a href="/admin/manage-products" class="nav-link px-2 text-secondary">Manage Products</a></li>
-          <li><a href="/admin/users" class="nav-link px-2 text-secondary">Manage Users</a></li>
-         
-          <li><a href="#" class="nav-link px-2 text-secondary">Orders</a></li>
-        </ul>
-    
-        <!--<div class="text-end">
-         
-          <button type="button" routerLink="/admin-login" class="btn btn-outline-light me-2">Admin Login</button>
-          
-        </div>-->
-      </div>
-    </div>
-  </header>
 
   
 <div class="container align-items-center">
@@ -58,7 +33,7 @@
 
     <div class="mb-3 col-md-4">
         <label for="price" class="form-label" >Price</label>
-        <input type="text" class="form-control" name="price" [(ngModel)]="product.price" placeholder="Enter  Price"
+        <input type="text" class="form-control" name="price" [(ngModel)]="product.price" placeholder="Enter Price"
         #price="ngModel" [ngClass]="{'is-invalid':price.touched && price.invalid}" minlength="1" maxlength="6" required/>
         <div *ngIf="price.touched && price.invalid" class="invalid-feedback">
             <div *ngIf="price.errors.required">
@@ -77,7 +52,7 @@
 
     <div class="mb-3 col-md-4">
         <label for="discount price" class="form-label" >Discount Price</label>
-        <input type="text" class="form-control" name="discountPrice" [(ngModel)]="product.discountPrice" placeholder="Enter  Dsicount Price"
+        <input type="text" class="form-control" name="discountPrice" [(ngModel)]="product.discountPrice" placeholder="Enter Discounted Price"
         #discountPrice="ngModel" [ngClass]="{'is-invalid':discountPrice.touched && discountPrice.invalid}" minlength="1" maxlength="6" required/>
         <div *ngIf="discountPrice.touched && discountPrice.invalid" class="invalid-feedback">
             <div *ngIf="discountPrice.errors.required">
@@ -95,7 +70,7 @@
 
     <div class="mb-3 col-md-4">
         <label for="image" class="form-label" >Image</label>
-        <input type="text" class="form-control" name="image" [(ngModel)]="product.image" placeholder="product image" 
+        <input type="text" class="form-control" name="image" [(ngModel)]="product.image" placeholder="Enter URL for Product Image" 
         #image="ngModel" [ngClass]="{'is-invalid':image.touched && image.invalid}" required  />
 
         <div *ngIf="image.touched && image.invalid" class="invalid-feedback">
@@ -107,7 +82,7 @@
 
     <div class="mb-3 col-md-4 ">
         <label for="description" class="form-label" >Description</label>
-        <input type="text" class="form-control" name="description" [(ngModel)]="product.description" placeholder="Description"
+        <input type="text" class="form-control" name="description" [(ngModel)]="product.description" placeholder="Enter Product Description"
         #description="ngModel" [ngClass]="{'is-invalid':description.touched && description.invalid}" minlength="60" required/>
         <div *ngIf="description.touched && description.invalid" class="invalid-feedback">
             <div *ngIf="description.errors.required">
