@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { UsereditprofileComponent } from './usereditprofile/usereditprofile.component';
+import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path:'admin/add-new-product', component:AddNewProductComponent},
   { path:'admin/manage-products', component:ManageProductsComponent},
   {path:'admin/manage-products/:id', component:ProductDetailsComponent},
-  {path:'admin/manage-products/edit/:id', component:ProductUpdateComponent}
+  {path:'admin/manage-products/edit/:id', component:ProductUpdateComponent},
+  { path: 'cart', component: CartComponent},
   
 ];
 

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../models/product';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-category-listing',
@@ -16,7 +17,7 @@ export class CategoryListingComponent implements OnInit {
   min = 0;
   max = this.MAX;
 
-  constructor(private _httpClient:HttpClient, private _router:Router, private _route:ActivatedRoute) { }
+  constructor(private _httpClient:HttpClient, private _router:Router, private _route:ActivatedRoute, private _cartService : CartService) { }
 
   ngOnInit(): void {
     this.department = this._route.snapshot.paramMap.get('department');
@@ -34,4 +35,11 @@ export class CategoryListingComponent implements OnInit {
     this.min = min;
     this.max = max;
   }
+
+  addToCart(product : Product){
+    this._cartService.addToCart(product);
+    console.log(product)
+    alert('Product added!');
+  }
+
 }

@@ -25,6 +25,8 @@ import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { UsereditprofileComponent } from './usereditprofile/usereditprofile.component';
 import { FilterPipe } from './pipes/filter.pipe';
+
+import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
 
 @NgModule({
@@ -48,6 +50,7 @@ import { ProductsComponent } from './products/products.component';
     UserprofileComponent,
     UsereditprofileComponent,
     FilterPipe,
+    CartComponent,
     ProductsComponent
   ],
   imports: [
