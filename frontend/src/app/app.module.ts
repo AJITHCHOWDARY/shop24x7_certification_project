@@ -24,6 +24,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { UsereditprofileComponent } from './usereditprofile/usereditprofile.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { UsereditprofileComponent } from './usereditprofile/usereditprofile.comp
     RegisterComponent,
     UserloginComponent,
     UserprofileComponent,
-    UsereditprofileComponent
+    UsereditprofileComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

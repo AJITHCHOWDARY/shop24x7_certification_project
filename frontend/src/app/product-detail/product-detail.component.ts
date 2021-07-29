@@ -16,7 +16,12 @@ export class ProductDetailComponent implements OnInit {
   // GET 6 products from the database
   productList: Product[]
 
-  constructor(private _httpClient:HttpClient, private _router:Router, private _route:ActivatedRoute) { }
+  constructor(private _httpClient:HttpClient, private _router:Router, private _route:ActivatedRoute) { 
+    this._router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+    this._router.onSameUrlNavigation = 'reload';
+  }
 
   ngOnInit(): void {
     this.id = this._route.snapshot.paramMap.get('id');
@@ -34,14 +39,6 @@ export class ProductDetailComponent implements OnInit {
     }, error => {
       console.log(error);
     })
-  }
-
-  refresh(){
-    this._router.routeReuseStrategy.shouldReuseRoute = function () {
-      return false;
-    }
-    this._router.onSameUrlNavigation = 'reload';
-    this._router.navigate(['/product-detail'], { queryParams: { index: 1 } });
   }
 
 }

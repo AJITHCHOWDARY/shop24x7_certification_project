@@ -12,6 +12,9 @@ export class CategoryListingComponent implements OnInit {
 
   department: any;
   productList: Product[]
+  MAX = Number.MAX_VALUE
+  min = 0;
+  max = this.MAX;
 
   constructor(private _httpClient:HttpClient, private _router:Router, private _route:ActivatedRoute) { }
 
@@ -20,10 +23,15 @@ export class CategoryListingComponent implements OnInit {
 
     this._httpClient.get<Product[]>('http://localhost:8080/products/products').subscribe(result => {
       this.productList = result;
+      this.productList.sort(value => {return value.topSelling ? -1 : 1});
       console.log(this.productList);
     }, error => {
       console.log(error);
     })
   }
 
+  priceRange(min, max){
+    this.min = min;
+    this.max = max;
+  }
 }
