@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test":"mocha --timeout 1000",
+    "test": "mocha --timeout 10000",
     "start": "nodemon ./bin/www -e js,ejs,html -w . -w views -w routes -w models"
   },
   "dependencies": {
