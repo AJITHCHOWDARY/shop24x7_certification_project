@@ -41,5 +41,4 @@ export class CategoryListingComponent implements OnInit {
     console.log(product)
     alert('Product added!');
   }
-
 }
