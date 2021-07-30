@@ -40,6 +40,7 @@ export class UsereditprofileComponent implements OnInit {
       username: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.minLength(10)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      address:['',[Validators.required]],
       confirmPassword: ['', [Validators.required]],
       makeAdmin:['']
     }, {validator:MustMatch('password', 'confirmPassword')});
