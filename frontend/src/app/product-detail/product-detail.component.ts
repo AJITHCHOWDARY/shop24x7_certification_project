@@ -52,4 +52,9 @@ export class ProductDetailComponent implements OnInit {
     alert('Product added!');
   }
 
+  buyNow(product : Product){
+    this._cartService.clearCart();
+    this._cartService.addToCart(product);
+    this._router.navigate(['/checkout']);
+  }
 }
