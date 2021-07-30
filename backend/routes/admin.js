@@ -76,7 +76,7 @@ router.post('/users/register', (req,res)=>{
   const mailOptions = {
     from: `"Ajith", "ajithumass2019@gmail.com"`,
     to: user.username,
-      subject: "Shop 25x7 Account Registartion ",
+      subject: "Shop 24x7 Account Registartion ",
     html: "<h4>Hello " + user.firstName + user.lastName+ ",</h4><p>Thanks for creating the 24x7 account, Happy Shopping . If you are not the recipient of this, please contact help@shop24x7.com </p>"
   };
   
@@ -113,7 +113,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'ajithumass2019@gmail.com',
-    pass: '*********' //Enter Gmail Password
+    pass: 'Ajith@0301' //Enter Gmail Password
   }
 });
 

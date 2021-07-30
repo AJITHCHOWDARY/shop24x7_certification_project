@@ -74,7 +74,7 @@ export class CheckoutComponent implements OnInit {
         order.userEmail = this.user.username as string;
         let stringifiedCart = [];
         this.items.forEach((item) => {
-          stringifiedCart.push(this.prettifyItem(item))
+          stringifiedCart.push(item.productName);
       });
 
         order.items = stringifiedCart;
