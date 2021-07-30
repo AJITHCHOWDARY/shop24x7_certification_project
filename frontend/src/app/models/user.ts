@@ -4,5 +4,6 @@ export class User{
     username:String;
     password:String;
     phone:Number;
+    address:String;
     admin: Boolean
 }

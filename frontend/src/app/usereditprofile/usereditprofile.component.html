@@ -18,14 +18,17 @@
                 </div>
         
                 <div class="mb-3">
-                    <input type="text" class="form-control" name="username" placeholder="Email" [(ngModel)]="editUser.username" required>
+                    <input type="text" class="form-control" name="username" placeholder="Email" [(ngModel)]="editUser.username" disabled>
                 </div>
         
                 <div class="mb-3">
                     <input type="text" class="form-control" name="phone" placeholder="Phone" [(ngModel)]="editUser.phone" required>
                 </div>
-                
-                
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="address" placeholder="Address" [(ngModel)]="editUser.address" required>
+                </div>
+
                 <br />
                 <div class="mb-3">
                     <button type="button" class="btn btn-secondary" (click)="updateUser()">Update</button> &nbsp;
