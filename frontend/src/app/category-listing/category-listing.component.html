@@ -7,11 +7,11 @@
                 <div class="card-body">
                     Price Range
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" (click)="priceRange(5, 50)"><button class="btn btn-link-dark p-0 fw-bold" id="button">€5 - €50</button></li>
-                        <li class="list-group-item" (click)="priceRange(50, 150)"><button class="btn btn-link-dark p-0 fw-bold" id="button">€50 - €150</button></li>
-                        <li class="list-group-item" (click)="priceRange(150, 500)"><button class="btn btn-link-dark p-0 fw-bold" id="button">€150 - €500</button></li>
-                        <li class="list-group-item" (click)="priceRange(500, 1500)"><button class="btn btn-link-dark p-0 fw-bold" id="button">€500 - €1500</button></li>
-                        <li class="list-group-item" (click)="priceRange(1500, 5000)"><button class="btn btn-link-dark p-0 fw-bold" id="button">€1500 - €5000</button></li>
+                        <li class="list-group-item" (click)="priceRange(5, 50)"><button class="btn btn-link-dark p-0 fw-bold" id="button">$5 - $50</button></li>
+                        <li class="list-group-item" (click)="priceRange(50, 150)"><button class="btn btn-link-dark p-0 fw-bold" id="button">$50 - $150</button></li>
+                        <li class="list-group-item" (click)="priceRange(150, 500)"><button class="btn btn-link-dark p-0 fw-bold" id="button">$150 - $500</button></li>
+                        <li class="list-group-item" (click)="priceRange(500, 1000)"><button class="btn btn-link-dark p-0 fw-bold" id="button">$500 - $1000</button></li>
+                        <li class="list-group-item" (click)="priceRange(1000, 5000)"><button class="btn btn-link-dark p-0 fw-bold" id="button">$1000 - $5000</button></li>
                         <li class="list-group-item" (click)="priceRange(0, MAX)"><button class="btn btn-link-dark p-0 fw-bold" id="button">Reset</button></li>
                     </ul>
                 </div>
@@ -26,16 +26,16 @@
                             <div class="card-header" style="font-size: small;">{{ product.productName }}</div>
                             <img src="{{ product.image }}" alt="..." width="100%" height="250px" style="object-fit: cover;">
                             <div class="card-footer">
-                                {{ product.discountPrice | currency:'EUR' }}
+                                {{ product.discountPrice | currency }}
                                 <button (click)="addToCart(product)" class="btn btn-outline-primary btn-sm float-end">Add to Cart</button>
                             </div>
                         </div>
                         <ng-template #elseBlock>
                             <div class="card text-dark">
-                                <div class="card-header" style="font-size: small;">Top Selling Product! <br>  {{ product.productName }} </div>
+                                <div class="card-header" style="font-size: small; background-color:yellow">Top Selling Product! <br>  {{ product.productName }} </div>
                                 <img src="{{ product.image }}" alt="..." width="100%" height="250px" style="object-fit: cover;">
                                 <div class="card-footer">
-                                    {{ product.discountPrice | currency:'EUR' }}
+                                    {{ product.discountPrice | currency }}
                                     <button (click)="addToCart(product)" class="btn btn-outline-primary btn-sm float-end">Add to Cart</button>
                                 </div>
                             </div>

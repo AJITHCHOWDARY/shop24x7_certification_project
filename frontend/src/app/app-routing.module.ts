@@ -19,6 +19,8 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { UsereditprofileComponent } from './usereditprofile/usereditprofile.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
+import { OrdersComponent } from './orders/orders.component';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'homepage', pathMatch:'full'},
@@ -41,6 +43,8 @@ const routes: Routes = [
   {path:'admin/manage-products/:id', component:ProductDetailsComponent, canActivate:[AuthGuard]},
   {path:'admin/manage-products/edit/:id', component:ProductUpdateComponent, canActivate:[AuthGuard]},
   { path: 'cart', component: CartComponent},
+  {path:'orders', component:OrdersComponent, canActivate:[AuthGuard]},
+  {path:'admin/orders', component:AdminOrdersComponent, canActivate:[AuthGuard] }
   
 ];
 

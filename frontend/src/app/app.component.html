@@ -9,10 +9,10 @@
 
        <ul class="nav col-12 col-md-auto me-md-auto mb-2 justify-content-center mb-md-0">
         
-          <li><a routerLink="homepage" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a routerLink="category-listing" class="nav-link px-2 text-secondary">Categories</a></li> 
-          <li><a routerLink="products" class="nav-link px-2 text-secondary">Products</a></li> 
-          <li><a routerLink="cart" class="nav-link px-2 text-secondary">Cart</a></li> 
+          <li><a routerLink="/homepage" class="nav-link px-2 text-secondary">Home</a></li>
+          <!-- <li><a routerLink="/category-listing" class="nav-link px-2 text-secondary">Categories</a></li>  -->
+          <li><a routerLink="/products" class="nav-link px-2 text-secondary">Products</a></li> 
+          <li><a routerLink="/cart" class="nav-link px-2 text-secondary">Cart</a></li> 
 
 
         </ul>
@@ -23,10 +23,10 @@
           </button>
         
           <ul class="dropdown-menu">
-            <li><a routerLink="admin/manage-products" class="dropdown-item">Manage Products</a></li>
-            <li><a routerLink="admin/users" class="dropdown-item">Manage Users</a></li>
-            <li><a routerLink="admin/users" class="dropdown-item">Track Orders</a></li>
-            <li><a routerLink="profile" class="dropdown-item">Profile</a></li>
+            <li><a routerLink="/admin/manage-products" class="dropdown-item">Manage Products</a></li>
+            <li><a routerLink="/admin/users" class="dropdown-item">Manage Users</a></li>
+            <li><a routerLink="/admin/orders" class="dropdown-item">Manage Orders</a></li>
+            <li><a routerLink="/profile" class="dropdown-item">Profile</a></li>
           </ul>  
       </div>
 
@@ -36,7 +36,7 @@
         </button>
       
         <ul class="dropdown-menu">
-          <li *ngIf="!isAdmin"><a routerLink="#" class="dropdown-item">Orders</a></li>
+          <li ><a routerLink="/orders" class="dropdown-item">Orders</a></li>
           <li><a routerLink="/profile" class="dropdown-item">Profile</a></li>
         </ul>  
     </div>

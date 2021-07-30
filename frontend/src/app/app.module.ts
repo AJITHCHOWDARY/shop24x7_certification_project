@@ -28,6 +28,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 
 import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
+import { OrdersComponent } from './orders/orders.component';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { ProductsComponent } from './products/products.component';
     UsereditprofileComponent,
     FilterPipe,
     CartComponent,
-    ProductsComponent
+    ProductsComponent,
+    OrdersComponent,
+    AdminOrdersComponent
   ],
   imports: [
     BrowserModule,
