@@ -8,6 +8,10 @@ const userSchema = mongoose.Schema({
     username:String,
     password:String,
     phone:Number,
+    profilePic:{
+        type:String,
+        default:"./images/profilePic.png"
+    },
     address:String,
     admin: {type:Boolean, default:false}
 });

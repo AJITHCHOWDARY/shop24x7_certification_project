@@ -4,6 +4,7 @@ export class User{
     username:String;
     password:String;
     phone:Number;
+    profilePic:String;
     address:String;
-    admin: Boolean
+    admin: Boolean;
 }
