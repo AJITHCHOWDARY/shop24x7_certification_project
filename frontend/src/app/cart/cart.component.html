@@ -7,7 +7,7 @@
       </div>
       <div *ngIf="total !=0" class="card-footer">
         <p class="card-text"> Total: {{ total | currency }} </p>
-        <button (click)="confirm()" class="btn btn-success">Place Order</button>
+        <button routerLink='/checkout' (click)="confirm()" class="btn btn-success">Place Order</button>
         <button (click)="clear()" class="btn btn-danger">Clear Cart</button>
       </div>
     </div>
