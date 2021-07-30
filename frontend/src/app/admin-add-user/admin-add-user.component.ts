@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MustMatch } from '../directives/must-match.validator';
 import { User } from '../models/user';
+import { AuthGuard } from '../services/auth-guard.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -15,9 +17,16 @@ export class AdminAddUserComponent implements OnInit {
   confirmPassword: string = "";
   newUserForm: FormGroup;
 
-  constructor(private _formBuilder:FormBuilder, private _userService:UserService) { }
+  constructor(private _formBuilder:FormBuilder, private _userService:UserService,
+    private _authGuard:AuthGuard, private _router:Router) { }
 
   ngOnInit(): void {
+    
+    if (!this._authGuard.isAdmin()){
+      alert("Need admin privileges to access this page.");
+      this._router.navigate(['homepage']);
+    }
+
     this.newUserForm = this._formBuilder.group({
       firstName:['', [Validators.required, Validators.minLength(3)]],
       lastName:['', [Validators.required]],

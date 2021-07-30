@@ -2,6 +2,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
+import { AuthGuard } from '../services/auth-guard.service';
 
 
 @Component({
@@ -14,9 +15,15 @@ export class ProductDetailsComponent implements OnInit {
   id:any;
   product :Product = new Product();
 
-  constructor(private _httpClient:HttpClient, private _router:Router, private _route:ActivatedRoute) { }
+  constructor(private _httpClient:HttpClient, private _router:Router, 
+    private _route:ActivatedRoute, private _authGuard:AuthGuard) { }
 
   ngOnInit(): void {
+
+    if (!this._authGuard.isAdmin()){
+      alert("Need admin privileges to access this page.");
+      this._router.navigate(['homepage']);
+    }
 
     this.id = this._route.snapshot.paramMap.get('id');
 

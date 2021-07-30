@@ -52,7 +52,7 @@ export class UsereditprofileComponent implements OnInit {
   updateUser(){
     this._userService.updateUser(this.id, this.editUser).subscribe(result=>{
       console.log(result)
-      this._router.navigate(['/userprofile']);
+      this._router.navigate(['/profile']);
     }, error=>{
       console.log(error)
     })

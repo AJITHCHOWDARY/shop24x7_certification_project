@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
       console.log(result)
       alert(result['message'])
       console.log(this.newUser.username);
-      window.location.replace('/userlogin')
+      window.location.replace('/login')
     }, error=>{
       console.log(error);
     })

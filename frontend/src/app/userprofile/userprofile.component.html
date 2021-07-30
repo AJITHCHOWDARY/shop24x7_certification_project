@@ -1,45 +1,41 @@
-
-  
-<div class="card">
-    <div class="card-header">
-            Details of {{user.firstName}}
-    </div>
-    <div class="card-body">
-        <table class="table">
-            <tbody>
-                
+<div class="container"  style="min-height:600px">
+    <div class="card">
+        <div class="card-header">
+            <h2>{{user.firstName | titlecase}} {{user.lastName | titlecase}}</h2>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tbody>
+                    
+                    <tr>
+                        <th>User ID</th>
+                        <td>{{id}}</td>
+                    </tr>
                 <tr>
-                    <th>User ID</th>
-                    <td>{{id}}</td>
+                    <th>First Name</th>
+                    <td>{{user.firstName}}</td>
                 </tr>
-            <tr>
-                <th>First Name</th>
-                <td>{{user.firstName}}</td>
-            </tr>
-            <tr>
-                <th>Last Name</th>
-                <td>{{user.lastName}}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{user.username}}</td>
-            </tr>
-            <tr>
-                <th>Phone Number</th>
-                <td>{{user.phone}}</td>
-            </tr>
-            
+                <tr>
+                    <th>Last Name</th>
+                    <td>{{user.lastName}}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{user.username}}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td>{{user.phone}}</td>
+                </tr>
+    
+            </tbody>
+            </table>
+        </div>
 
-            
-        </tbody>
-        </table>
+        <div class="card-footer">
+            <a class="btn btn-outline-primary me-2" routerLink="">Go Back</a>
+            <a [routerLink]="['/usereditprofile']" class="btn btn-primary">Update User</a>
+        </div>
+
     </div>
-
-    <div class="card-footer">
-        <a class="btn btn-warning" routerLink="/homepage">Go Back</a> |
-        <a [routerLink]="['/usereditprofile']" class="btn btn-primary">Update User</a>
-       
-        <!--<a class="btn btn-danger" (click)="deleteProduct()" >Delete</a>-->
-    </div>
-
 </div>

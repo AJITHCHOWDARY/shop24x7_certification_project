@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MustMatch } from '../directives/must-match.validator';
 import { User } from '../models/user';
+import { AuthGuard } from '../services/auth-guard.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -17,9 +18,14 @@ export class AdminUserUpdateComponent implements OnInit {
   editUserForm: FormGroup;
 
   constructor(private _formBuilder:FormBuilder, private _route:ActivatedRoute, private _userService: UserService,
-    private _router:Router) { }
+    private _router:Router, private _authGuard:AuthGuard) { }
 
   ngOnInit(): void {
+    if (!this._authGuard.isAdmin()){
+      alert("Need admin privileges to access this page.");
+      this._router.navigate(['homepage']);
+    }
+
     this.id = this._route.snapshot.paramMap.get('id');
     console.log(this._route.snapshot)
     console.log("ID: " + this.id);
