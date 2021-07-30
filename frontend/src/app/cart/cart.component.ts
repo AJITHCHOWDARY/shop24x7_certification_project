@@ -19,10 +19,14 @@ export class CartComponent implements OnInit {
   }
 
   confirm(){
-    alert("Order is on the way!")
+
   }
 
   clear(){
     this._cartService.clearCart();
+    alert('Cart cleared.');
+    this._router.navigate(['/cart']).then(() => {
+      window.location.reload();
+    });
   }
 }

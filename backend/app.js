@@ -7,6 +7,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 var productsRouter = require('./routes/product');
+var orderRouter = require('./routes/index')
 
 
 
@@ -64,6 +65,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 app.use('/products', productsRouter);
+app.use('/orders', orderRouter);
 
 
 module.exports = app;
